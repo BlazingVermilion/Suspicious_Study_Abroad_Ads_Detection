@@ -1,0 +1,7 @@
+# GPU setup note.
+# Do not install this file directly with pip if you want robust CUDA setup.
+# Use:
+#   python scripts/setup_environment.py --device gpu --cuda cu128
+#
+# The setup script installs base requirements first, then installs PyTorch from:
+#   https://download.pytorch.org/whl/cu128

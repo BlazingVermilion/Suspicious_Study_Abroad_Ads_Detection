@@ -1,0 +1,1 @@
+v3.2 - prepared-data pipeline with explicit CPU/GPU setup and device selection

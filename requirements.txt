@@ -1,0 +1,23 @@
+# Base dependencies for the suspicious educational ads pipeline.
+#
+# IMPORTANT:
+# This file intentionally does NOT install torch/torchvision/torchaudio.
+# Install the PyTorch build separately for your device:
+#   CPU: python scripts/setup_environment.py --device cpu
+#   GPU: python scripts/setup_environment.py --device gpu --cuda cu128
+#
+# This avoids accidentally installing a CPU-only torch build when you want CUDA.
+
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+scipy>=1.10
+transformers>=4.38
+accelerate>=1.1.0
+tqdm>=4.66
+joblib>=1.3
+playwright>=1.40
+langdetect>=1.0.9
+ipykernel>=6.0
+jupyter>=1.0
+pyyaml>=6.0

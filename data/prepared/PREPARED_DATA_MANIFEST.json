@@ -1,0 +1,29 @@
+[
+  {
+    "file": "data/prepared/normalized_posts.csv",
+    "rows": 1002,
+    "columns": 17,
+    "seed_label_counts": {
+      "none": 753,
+      "legitimate": 249
+    }
+  },
+  {
+    "file": "data/prepared/silver_pool.csv",
+    "rows": 802,
+    "columns": 17,
+    "seed_label_counts": {
+      "none": 603,
+      "legitimate": 199
+    }
+  },
+  {
+    "file": "data/prepared/binary_gold_eval.csv",
+    "rows": 173,
+    "columns": 30,
+    "seed_label_counts": {
+      "normal": 103,
+      "suspicious": 70
+    }
+  }
+]

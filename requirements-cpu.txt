@@ -1,0 +1,6 @@
+# CPU-only setup.
+# Usage:
+#   python -m pip install -r requirements-cpu.txt
+
+-r requirements.txt
+torch>=2.0

@@ -1,0 +1,17 @@
+project_root: .
+
+paths:
+  account_registry: data/raw/instagram/metadata/account_registry.json
+  legitimate_seed_posts: data/raw/instagram/metadata/legitimate_seed_posts.json
+  suspicious_candidate_posts: data/raw/instagram/metadata/suspicious_candidate_posts.json
+  normalized_posts: data/processed/normalized/normalized_posts.csv
+  ner_re_annotations: data/processed/annotations/ner_re_gold_annotated_subset.json
+  binary_gold_eval: data/processed/splits/binary_gold_eval.csv
+  silver_pool: data/processed/splits/silver_pool.csv
+  ner_re_output_dir: data/processed/ner_re
+  silver_train: data/processed/weak_labeling/silver_train.csv
+  classifier_output_dir: outputs/classifier_evaluation
+
+model:
+  transformer: distilbert-base-uncased
+  max_length: 256

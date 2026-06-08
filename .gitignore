@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# Secrets / sessions
+instagram_session.json
+secrets/*.json
+!secrets/README.md
+
+# Raw/private data
+data/raw/instagram/screenshots/**
+!data/raw/instagram/screenshots/.gitkeep
+data/raw/instagram/metadata/*.json
+data/raw/instagram/metadata/*.jsonl
+!data/raw/instagram/metadata/.gitkeep
+
+
+# Prepared reproducibility inputs (curated, not raw screenshots/session files)
+# Keep these only if your repository is private or you have permission to release them.
+!data/prepared/
+!data/prepared/**
+
+# Processed datasets - keep structure/docs only unless intentionally released
+data/processed/**/*.csv
+data/processed/**/*.json
+data/processed/**/*.jsonl
+!data/processed/**/.gitkeep
+
+# Model/checkpoint artifacts
+models/**
+!models/**/.gitkeep
+data/processed/ner_re/models/**
+outputs/classifier_evaluation/models/**
+*.pt
+*.bin
+*.safetensors
+*.joblib
+
+# Logs / local exports
+*.log
+reports/figures/*.png
+reports/figures/*.pdf

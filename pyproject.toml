@@ -1,0 +1,11 @@
+[project]
+name = "suspicious-educational-ads-detection"
+version = "0.1.0"
+description = "Detecting suspicious study-abroad educational advertisements on Instagram with weak supervision, NER/RE, and transformer classifiers."
+requires-python = ">=3.10"
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
