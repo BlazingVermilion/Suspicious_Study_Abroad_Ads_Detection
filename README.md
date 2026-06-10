@@ -64,37 +64,41 @@ NER/RE extraction → weak labeling → classifier training/evaluation
 
 ```mermaid
 flowchart TD
-    A[Instagram account discovery and crawling] --> B[Raw Instagram metadata and screenshots]
-    B --> C[Normalize dataset]
-    C --> D[normalized_posts.csv]
+    A[Data Crawling] --> B[Crawl legitimate posts from official, public, and private university accounts]
+    A --> C[Instagram account discovery]
+    C --> D[Crawl posts from discovered accounts]
 
-    D --> E1[Create binary gold evaluation set]
-    D --> E2[Create NER/RE annotated gold subset]
+    B --> E[Clean and normalize dataset]
+    D --> E
+    E --> F[normalized_posts.csv]
 
-    E1 --> F1[binary_gold_eval.csv]
-    E1 --> F2[silver_pool.csv]
-    E2 --> F3[ner_re_gold_annotated_subset.json]
+    F --> G[Create binary gold evaluation set]
+    F --> H[Create NER/RE annotated gold subset]
+    F --> I[Create silver candidate pool]
 
-    F2 --> G[DistilBERT NER/RE extraction]
-    F1 --> G
-    F3 --> G
+    G --> J[binary_gold_eval.csv]
+    H --> K[ner_re_gold_annotated_subset.json]
+    I --> L[silver_pool.csv]
 
-    G --> H1[silver_with_ner_re_oof_ensemble.csv]
-    G --> H2[binary_gold_with_ner_re_ensemble.csv]
-    G --> H3[NER/RE CV metrics]
+    J --> M[DistilBERT NER/RE extraction]
+    K --> M
+    L --> M
 
-    H1 --> I[Weak labeling]
-    H3 --> I
-    F3 --> I
+    M --> N[NER/RE metrics]
+    M --> O[binary_gold_with_ner_re_ensemble.csv]
+    M --> P[silver_with_ner_re_oof_ensemble.csv]
 
-    I --> J[silver_train.csv]
-    I --> K[uncertain_posts.csv and debug reports]
+    P --> Q[Weak labeling using NER/RE metrics]
+    N --> Q
+    Q --> R[weak-labeled silver training data]
+    Q --> S[uncertain posts and debug reports]
 
-    J --> L[Classifier training]
-    H2 --> L
+    R --> T[Classifier training using weak-labeled data]
+    O --> U[Evaluate classifier models on binary gold set]
+    T --> U
 
-    L --> M[Gold-set evaluation metrics]
-    L --> N[Model ranking and predictions]
+    U --> V[Gold-set evaluation metrics]
+    U --> W[Model ranking and predictions]
 ```
 
 The repository supports two execution modes:
@@ -107,7 +111,7 @@ The repository supports two execution modes:
 ## Repository Structure
 
 ```text
-Suspicious_Educational_Ads_Detection_GitHub_Ready_v3_4/
+Suspicious_Study_Abroad_Ads_Detection/
 ├── src/
 │   ├── collection/          # Instagram session, account discovery, and post crawling
 │   ├── preprocessing/       # Normalize raw Instagram records
